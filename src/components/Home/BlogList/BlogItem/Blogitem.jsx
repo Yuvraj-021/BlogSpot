@@ -17,7 +17,7 @@ const Blogitem = ({
 }) => {
   return (
     <div className="blogitem-wrap">
-      <img src={cover} alt="cover" />
+      <img src={cover} alt="cover" className="blogitem-cover" />
       <Chip label={category} />
       <h3>{title}</h3>
       <p className="blogitem-desc">{description}</p>
@@ -30,7 +30,7 @@ const Blogitem = ({
             <p>{createdAt}</p>
           </div>
         </div>
-        <Link to={`/blog/${id}`}>➝</Link>
+        <Link className="blogitem-link" to={`/blog/${id}`}>➝</Link>
       </footer>
     </div>
   );
