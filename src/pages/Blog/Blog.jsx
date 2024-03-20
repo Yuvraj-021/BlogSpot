@@ -5,7 +5,6 @@ import Chip from "../../components/Common/Chip/Chip";
 import Emptylist from "../../components/Common/EmptyList/Emptylist";
 import "./styles.css";
 
-
 const Blog = () => {
   const { id } = useParams();
   const [blog, setBlog] = useState(null);
@@ -20,7 +19,7 @@ const Blog = () => {
 
   return (
     <div>
-      <Link>
+      <Link to="/">
         <span>&#8592;</span>
         Go Back
       </Link>
@@ -37,12 +36,13 @@ const Blog = () => {
                 </div>
               ))}
             </div>
-
           </header>
-          <img src={blog.cover} alt="cover"/>
+          <img src={blog.cover} alt="cover" />
           <p className="blog-desc">{blog.description}</p>
         </div>
-      ) : (<Emptylist/>)}
+      ) : (
+        <Emptylist />
+      )}
     </div>
   );
 };
