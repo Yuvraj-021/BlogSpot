@@ -3,7 +3,7 @@ import "./styles.css";
 
 const Header = () => (
   <header className="home-header">
-    <h2>Inc. This Morning</h2>
+    {/* <h2>Inc. This Morning</h2> */}
     <h1>
       <span>
         "<span>Blogspot</span>"

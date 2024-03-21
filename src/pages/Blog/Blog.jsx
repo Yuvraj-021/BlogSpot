@@ -1,16 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { blogList } from "../../config/data";
 import Chip from "../../components/Common/Chip/Chip";
 import Emptylist from "../../components/Common/EmptyList/Emptylist";
 import "./styles.css";
+import { blogListStore } from "../../store/BlogsStore";
 
 const Blog = () => {
   const { id } = useParams();
   const [blog, setBlog] = useState(null);
+  const { blogsStoreList } = useContext(blogListStore);
 
   useEffect(() => {
-    let blog = blogList.find((blog) => blog.id === parseInt(id));
+    let blog = blogsStoreList.find((blog) => blog.id === parseInt(id));
 
     if (blog) {
       setBlog(blog);

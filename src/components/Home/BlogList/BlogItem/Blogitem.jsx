@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./styles.css";
 import Chip from "../../../Common/Chip/Chip";
 import { Link } from "react-router-dom";
+import { blogListStore } from "../../../../store/BlogsStore";
+import { Delete } from "@mui/icons-material";
 
 const Blogitem = ({
   blog: {
@@ -15,6 +17,7 @@ const Blogitem = ({
     cover,
   },
 }) => {
+  const { deleteBlogs } = useContext(blogListStore);
   return (
     <div className="blogitem-wrap">
       <img src={cover} alt="cover" className="blogitem-cover" />
@@ -30,7 +33,17 @@ const Blogitem = ({
             <p>{createdAt}</p>
           </div>
         </div>
-        <Link className="blogitem-link" to={`/blog/${id}`}>➝</Link>
+        <Link className="blogitem-link" to={`/blog/${id}`}>
+          ➝
+        </Link>
+
+        <span
+          className="position-absolute top-0 end-0 translate-middle badge rounded-pill bg-danger"
+          onClick={() => deleteBlogs(id)}
+        >
+          <Delete />
+          {/* <span class="visually-hidden">Delete icon</span> */}
+        </span>
       </footer>
     </div>
   );

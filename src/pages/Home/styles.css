@@ -1,0 +1,13 @@
+.add-button {
+    position: fixed; /* Fix the button to the viewport */
+    bottom: 20px; /* Adjust the distance from the bottom */
+    right: 20px;  /* Adjust the distance from the right */
+    width: 50px;  /* Set the button width */
+    height: 50px; /* Set the button height */
+    border: none; /* Remove default border */
+    background-color: #007bff; /* Set button color */
+    color: white; /* Set text color */
+    border-radius: 50%; /* Make the button circular */
+    cursor: pointer; /* Set cursor to pointer on hover */
+    font-size: 1.5rem; /* Adjust icon size */
+  }
